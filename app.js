@@ -9,7 +9,7 @@ const state = {
   muted: true,
   settings: {
     finalTitle: "ES VARON",
-    finalSubtitle: "Felipe Fidel se esta preparando para empaparse de amor.\nGracias por acopañarnos en esta aventura.",
+    finalSubtitle: "Felipe Fidel se esta preparando para empaparse de amor. Gracias por acopañarnos en esta aventura.",
     finalDate: ""
   }
 };
@@ -224,7 +224,7 @@ function buildScreens(){
     {
       kicker: "Final",
       title: "ES VARON",
-      text: "Felipe Fidel se esta preparando para empaparse de amor.\nGracias por acompañarnos en esta aventura.",
+      text: "Felipe Fidel se esta preparando para empaparse de amor. Gracias por acompañarnos en esta aventura.",
       chips: [
         {icon:"party", text:"¡Felicidad total!"},
         {icon:"share", text:"Compartilo"},
