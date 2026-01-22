@@ -8,8 +8,8 @@ const state = {
   idx: 0,
   muted: true,
   settings: {
-    finalTitle: "¡Es varón! 💙",
-    finalSubtitle: "Gracias por acompañarnos en esta aventura",
+    finalTitle: "ES VARON",
+    finalSubtitle: "Felipe Fidel se esta preparando para empaparse de amor.",
     finalDate: ""
   }
 };
@@ -56,172 +56,132 @@ function softClick(){
 }
 
 function buildScreens(){
-  // Inline SVG illustrations (cute, baby vibe, blue reveal)
+  // Ilustraciones minimalistas (SVG) en tonos cremitas
   const svgs = {
     moon:
-`<svg viewBox="0 0 520 420" role="img" aria-label="Noche estrellada">
+`<svg viewBox="0 0 520 420" role="img" aria-label="Noche suave">
   <defs>
     <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9ff3ff" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#66b6ff" stop-opacity="0.95"/>
+      <stop offset="0" stop-color="#d7c6a3" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#c9a56a" stop-opacity="0.95"/>
     </linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff7ad9" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#6a7dff" stop-opacity="0.9"/>
-    </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-  <rect x="0" y="0" width="520" height="420" rx="26" fill="rgba(0,0,0,0)" />
+  <rect x="0" y="0" width="520" height="420" rx="26" fill="rgba(255,250,240,0.0)"/>
   <g class="wiggle">
-    <circle cx="390" cy="105" r="62" fill="url(#g1)" filter="url(#glow)"/>
-    <circle cx="410" cy="92" r="54" fill="rgba(15,23,49,0.85)"/>
+    <circle cx="392" cy="108" r="62" fill="url(#g1)" opacity="0.85"/>
+    <circle cx="412" cy="95" r="54" fill="rgba(255,250,240,0.75)"/>
   </g>
-  <g opacity="0.95">
+  <g opacity="0.55">
     ${Array.from({length:18}).map((_,i)=>{
       const x = 35 + (i*27)%480;
-      const y = 40 + ((i*53)%320);
+      const y = 44 + ((i*53)%320);
       const r = 2 + (i%3);
-      return `<circle cx="${x}" cy="${y}" r="${r}" fill="rgba(255,255,255,0.85)"/>`;
+      return `<circle cx="${x}" cy="${y}" r="${r}" fill="rgba(44,42,38,0.35)"/>`;
     }).join("")}
   </g>
-  <g class="bounce" style="animation-duration:1.9s">
-    <path d="M120 290c40-70 90-92 140-95 55-3 95 22 135 80" fill="none" stroke="rgba(159,243,255,0.55)" stroke-width="10" stroke-linecap="round"/>
-    <path d="M110 305c55-92 125-122 194-126 76-5 132 32 190 110" fill="none" stroke="rgba(102,182,255,0.35)" stroke-width="14" stroke-linecap="round"/>
+  <g class="bounce" style="animation-duration:2.1s">
+    <path d="M110 305c55-92 125-122 194-126 76-5 132 32 190 110"
+      fill="none" stroke="rgba(201,165,106,0.35)" stroke-width="14" stroke-linecap="round"/>
   </g>
-  <g>
-    <path d="M70 330c55-28 108-38 160-36 67 3 122 20 200 64 20 12 47 10 65-5 13-12 18-32 10-49-12-26-33-44-61-53-75-24-148-41-221-39-72 2-138 22-202 66-18 12-24 36-14 55 10 18 36 25 63  -3z"
-      fill="rgba(15,23,49,0.75)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-  </g>
-  <g filter="url(#glow)">
-    <path d="M165 255c22 0 40-18 40-40s-18-40-40-40-40 18-40 40 18 40 40 40z" fill="url(#g2)" opacity="0.9"/>
+  <g opacity="0.9">
+    <path d="M78 330c64-44 130-64 202-66 73-2 146 15 221 39 28 9 49 27 61 53 8 17 3 37-10 49-18 15-45 17-65 5-78-44-133-61-200-64-52-2-105 8-160 36-27 14-53 7-63-11-10-19-4-43 14-55z"
+      fill="rgba(255,250,240,0.62)" stroke="rgba(227,214,193,0.95)" stroke-width="2"/>
   </g>
 </svg>`,
 
     heart:
-`<svg viewBox="0 0 520 420" role="img" aria-label="Corazón y huellitas">
+`<svg viewBox="0 0 520 420" role="img" aria-label="Corazón minimal">
   <defs>
     <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9ff3ff"/>
-      <stop offset="1" stop-color="#4f7dff"/>
+      <stop offset="0" stop-color="#d7c6a3"/>
+      <stop offset="1" stop-color="#c9a56a"/>
     </linearGradient>
-    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="10" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-  <g class="bounce" style="animation-duration:1.7s">
+  <g class="bounce" style="animation-duration:2.0s">
     <path d="M260 346s-134-74-174-162c-28-64 12-126 76-126 41 0 74 22 98 54 24-32 57-54 98-54 64 0 104 62 76 126-40 88-174 162-174 162z"
-      fill="url(#hb)" filter="url(#s)" opacity="0.95"/>
+      fill="url(#hb)" opacity="0.85" stroke="rgba(44,42,38,0.10)" stroke-width="2"/>
   </g>
-  <g opacity="0.9">
+  <g opacity="0.45">
     ${Array.from({length:8}).map((_,i)=>{
       const x = 70 + i*55;
       const y = 65 + (i%2)*28;
-      return `<g transform="translate(${x} ${y}) rotate(${(i%2? -10:10)})">
-        <circle cx="0" cy="0" r="8" fill="rgba(255,255,255,0.85)"/>
-        <circle cx="18" cy="2" r="6" fill="rgba(255,255,255,0.72)"/>
-        <circle cx="7" cy="18" r="6" fill="rgba(255,255,255,0.72)"/>
-        <circle cx="18" cy="18" r="5" fill="rgba(255,255,255,0.65)"/>
-      </g>`;
+      return `<circle cx="${x}" cy="${y}" r="${3+(i%2)}" fill="rgba(44,42,38,0.25)"/>`;
     }).join("")}
   </g>
 </svg>`,
 
     box:
-`<svg viewBox="0 0 520 420" role="img" aria-label="Caja sorpresa">
+`<svg viewBox="0 0 520 420" role="img" aria-label="Caja sorpresa minimal">
   <defs>
     <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#66b6ff"/>
-      <stop offset="1" stop-color="#9ff3ff"/>
+      <stop offset="0" stop-color="#c9a56a"/>
+      <stop offset="1" stop-color="#d7c6a3"/>
     </linearGradient>
-    <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff7ad9"/>
-      <stop offset="1" stop-color="#6a7dff"/>
-    </linearGradient>
-    <filter id="g" x="-35%" y="-35%" width="170%" height="170%">
-      <feGaussianBlur stdDeviation="8" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
   <g class="pop">
-    <rect x="120" y="170" width="280" height="190" rx="28" fill="rgba(15,23,49,0.65)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
-    <rect x="110" y="150" width="300" height="66" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
-    <rect x="248" y="150" width="26" height="210" rx="13" fill="url(#b1)" opacity="0.95"/>
-    <rect x="110" y="178" width="300" height="26" rx="13" fill="url(#b1)" opacity="0.85"/>
-    <g filter="url(#g)" class="wiggle" style="transform-origin:260px 150px; animation-duration:1.3s">
-      <path d="M260 148c-18-30-50-44-78-35-26 9-38 34-23 56 17 25 58 22 101-21z" fill="url(#b2)" opacity="0.95"/>
-      <path d="M260 148c18-30 50-44 78-35 26 9 38 34 23 56-17 25-58 22-101-21z" fill="url(#b2)" opacity="0.95"/>
-      <circle cx="260" cy="150" r="16" fill="rgba(255,255,255,0.85)"/>
+    <rect x="120" y="170" width="280" height="190" rx="28"
+      fill="rgba(255,250,240,0.75)" stroke="rgba(227,214,193,0.95)" stroke-width="2"/>
+    <rect x="110" y="150" width="300" height="66" rx="22"
+      fill="rgba(255,250,240,0.92)" stroke="rgba(227,214,193,0.95)" stroke-width="2"/>
+    <rect x="248" y="150" width="26" height="210" rx="13" fill="url(#b1)" opacity="0.75"/>
+    <rect x="110" y="178" width="300" height="26" rx="13" fill="url(#b1)" opacity="0.62"/>
+    <g class="wiggle" style="transform-origin:260px 150px; animation-duration:2.0s">
+      <path d="M260 148c-18-30-50-44-78-35-26 9-38 34-23 56 17 25 58 22 101-21z"
+        fill="rgba(201,165,106,0.55)" />
+      <path d="M260 148c18-30 50-44 78-35 26 9 38 34 23 56-17 25-58 22-101-21z"
+        fill="rgba(215,198,163,0.55)" />
+      <circle cx="260" cy="150" r="16" fill="rgba(255,250,240,0.95)" stroke="rgba(44,42,38,0.08)" stroke-width="2"/>
     </g>
   </g>
-  <g opacity="0.95">
+  <g opacity="0.45">
     ${Array.from({length:10}).map((_,i)=>{
       const x = 70 + (i*41)%380;
-      const y = 40 + ((i*67)%120);
-      return `<circle cx="${x}" cy="${y}" r="${2+(i%3)}" fill="rgba(255,255,255,0.8)"/>`;
+      const y = 44 + ((i*67)%120);
+      return `<circle cx="${x}" cy="${y}" r="${2+(i%2)}" fill="rgba(44,42,38,0.22)"/>`;
     }).join("")}
   </g>
 </svg>`,
 
-    baby:
-`<svg viewBox="0 0 520 420" role="img" aria-label="Bebé dormidito">
+    teddy:
+`<svg viewBox="0 0 520 420" role="img" aria-label="Osito minimalista">
   <defs>
-    <linearGradient id="bb" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9ff3ff"/>
-      <stop offset="1" stop-color="#66b6ff"/>
+    <linearGradient id="tb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7dcc8"/>
+      <stop offset="1" stop-color="#d7c6a3"/>
     </linearGradient>
-    <filter id="soft" x="-35%" y="-35%" width="170%" height="170%">
-      <feGaussianBlur stdDeviation="10" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <g filter="url(#soft)" class="bounce" style="animation-duration:2s">
-    <ellipse cx="260" cy="270" rx="160" ry="98" fill="rgba(15,23,49,0.55)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
-    <circle cx="260" cy="210" r="84" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
-    <path d="M220 220c10 8 20 8 30 0" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M270 220c10 8 20 8 30 0" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M245 248c10 10 20 10 30 0" stroke="rgba(255,255,255,0.65)" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M170 275c45-40 95-62 150-62s105 22 150 62" stroke="url(#bb)" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.9"/>
-    <path d="M195 290c32-26 66-40 105-40s73 14 105 40" stroke="rgba(159,243,255,0.5)" stroke-width="10" fill="none" stroke-linecap="round"/>
-  </g>
-  <g opacity="0.9">
-    <path d="M170 168c10-24 40-36 60-24" stroke="rgba(255,255,255,0.55)" stroke-width="6" fill="none" stroke-linecap="round"/>
-  </g>
-</svg>`,
-
-    reveal:
-`<svg viewBox="0 0 520 420" role="img" aria-label="Revelación azul">
-  <defs>
-    <linearGradient id="rv" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9ff3ff"/>
-      <stop offset="1" stop-color="#4f7dff"/>
+    <linearGradient id="tb2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9a56a"/>
+      <stop offset="1" stop-color="#b88d4a"/>
     </linearGradient>
-    <filter id="rvGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="12" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
 
-  <g filter="url(#rvGlow)" class="wiggle" style="animation-duration:1.5s">
-    <circle cx="260" cy="210" r="132" fill="url(#rv)" opacity="0.95"/>
-    <circle cx="260" cy="210" r="108" fill="rgba(15,23,49,0.55)" opacity="0.9"/>
+  <g class="bounce" style="animation-duration:2.2s">
+    <!-- ears -->
+    <circle cx="190" cy="130" r="42" fill="url(#tb)" stroke="rgba(44,42,38,0.10)" stroke-width="2"/>
+    <circle cx="330" cy="130" r="42" fill="url(#tb)" stroke="rgba(44,42,38,0.10)" stroke-width="2"/>
+    <circle cx="190" cy="130" r="22" fill="rgba(255,250,240,0.9)"/>
+    <circle cx="330" cy="130" r="22" fill="rgba(255,250,240,0.9)"/>
+
+    <!-- head -->
+    <circle cx="260" cy="190" r="110" fill="url(#tb)" stroke="rgba(44,42,38,0.10)" stroke-width="2"/>
+    <!-- muzzle -->
+    <ellipse cx="260" cy="230" rx="78" ry="58" fill="rgba(255,250,240,0.92)" stroke="rgba(44,42,38,0.08)" stroke-width="2"/>
+    <!-- nose -->
+    <path d="M260 230c-12-10-26-14-40-10 8 18 22 26 40 26s32-8 40-26c-14-4-28 0-40 10z"
+      fill="url(#tb2)" opacity="0.9"/>
+    <!-- eyes -->
+    <circle cx="220" cy="190" r="8" fill="rgba(44,42,38,0.75)"/>
+    <circle cx="300" cy="190" r="8" fill="rgba(44,42,38,0.75)"/>
+    <!-- smile -->
+    <path d="M240 258c10 10 30 10 40 0" fill="none" stroke="rgba(44,42,38,0.45)" stroke-width="5" stroke-linecap="round"/>
   </g>
 
-  <g class="pop">
-    <path d="M160 295c35 36 78 54 100 54s65-18 100-54" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="10" stroke-linecap="round"/>
-    <text x="260" y="230" text-anchor="middle" font-size="54" font-weight="900" fill="rgba(255,255,255,0.92)" font-family="Nunito, sans-serif">VARÓN</text>
-    <text x="260" y="260" text-anchor="middle" font-size="18" font-weight="800" fill="rgba(255,255,255,0.70)" font-family="Nunito, sans-serif">💙 💙 💙</text>
-  </g>
-
-  <g opacity="0.95">
-    ${Array.from({length:14}).map((_,i)=>{
-      const a = (i/14) * Math.PI*2;
+  <g opacity="0.35">
+    ${Array.from({length:12}).map((_,i)=>{
+      const a = (i/12) * Math.PI*2;
       const x = 260 + Math.cos(a)*175;
-      const y = 210 + Math.sin(a)*135;
-      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${2+(i%3)}" fill="rgba(255,255,255,0.85)"/>`;
+      const y = 210 + Math.sin(a)*130;
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${2+(i%2)}" fill="rgba(44,42,38,0.22)"/>`;
     }).join("")}
   </g>
 </svg>`
@@ -230,19 +190,19 @@ function buildScreens(){
   const screens = [
     {
       kicker: "Capítulo 1",
-      title: "Érase una vez…\nuna noticia chiquita,\npero gigante 💫",
+      title: "Érase una vez…\nuna noticia chiquita,\npero gigante ✨",
       text: "Hay un nuevo latidito en camino. Y antes de decirte el final, queremos contarte una mini historia.",
       chips: [
-        {icon:"sparkles", text:"Deslizá / avanzá"},
+        {icon:"sparkles", text:"Avanzá con →"},
         {icon:"moon", text:"Modo cuento"},
       ],
       svg: svgs.moon,
-      ribbon: "Pista: hay estrellitas y una sorpresa…"
+      ribbon: "Pista: hay una sorpresa…"
     },
     {
       kicker: "Capítulo 2",
       title: "Un corazón\ncon ganas de aventura",
-      text: "Entre mates, sueños y abrazos, empezamos a imaginar cómo será esta nueva personita.",
+      text: "Entre sueños y abrazos, empezamos a imaginar cómo será esta nueva personita.",
       chips: [
         {icon:"heart", text:"Mucho amor"},
         {icon:"steps", text:"Pasitos en camino"},
@@ -256,37 +216,21 @@ function buildScreens(){
       text: "Guardamos la gran noticia como un tesoro. ¿Listos para abrirla?",
       chips: [
         {icon:"gift", text:"Sorpresa"},
-        {icon:"magic", text:"Un toque de magia"},
+        {icon:"magic", text:"Toque de magia"},
       ],
       svg: svgs.box,
-      ribbon: "Cuando digas ‘ya’, abrimos 💥"
-    },
-    {
-      kicker: "Capítulo 4",
-      title: "Un bebito\ndormidito…",
-      text: "Todavía es pequeñito, pero ya se hace sentir. Y nosotros… no podemos esperar para conocerlo.",
-      chips: [
-        {icon:"cloud", text:"Sueñitos"},
-        {icon:"star", text:"Un nuevo mundo"},
-      ],
-      svg: svgs.baby,
-      ribbon: "Respirá hondo: falta poquito."
+      ribbon: "Cuando digas ‘ya’, abrimos ✨"
     },
     {
       kicker: "Final",
-      title: () => state.settings.finalTitle || "¡Es varón! 💙",
-      text: () => {
-        const s = state.settings;
-        const date = (s.finalDate || "").trim();
-        const line = date ? `\n\n📅 ${date}` : "";
-        return (s.finalSubtitle || "Gracias por acompañarnos en esta aventura") + line;
-      },
+      title: "ES VARON",
+      text: "Felipe Fidel se esta preparando para empaparse de amor.",
       chips: [
         {icon:"party", text:"¡Felicidad total!"},
         {icon:"share", text:"Compartilo"},
       ],
-      svg: svgs.reveal,
-      ribbon: "Tocá ‘Siguiente’ otra vez para tirar confeti ✨"
+      svg: svgs.teddy,
+      ribbon: "Tocá ‘Celebrar’ para tirar confeti ✨"
     },
   ];
 
@@ -443,7 +387,7 @@ function makePiece(power=1){
   const rot = Math.random()*Math.PI*2;
   const vr = (-0.2 + Math.random()*0.4) * (1.2 + power*2.2);
   // We avoid fixed colors in CSS, but for confetti we need some color variety:
-  const palette = ["#9ff3ff","#66b6ff","#4f7dff","#ffffff","#ff7ad9"];
+  const palette = ["#fffaf0","#efe6d6","#e7dcc8","#d7c6a3","#c9a56a"];
   const color = palette[(Math.random()*palette.length)|0];
   return {x,y,size,vx,vy,rot,vr,color,life: 0,ttl: 240 + Math.random()*120};
 }
@@ -498,7 +442,7 @@ async function share(){
   softClick();
   const url = location.href;
   const data = {
-    title: "StoryBook — ¡Es varón! 💙",
+    title: "StoryBook — ES VARON",
     text: "Mirá el StoryBook (anuncio):",
     url
   };

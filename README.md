@@ -1,21 +1,17 @@
-# StoryBook — ¡Es varón! 💙
+# StoryBook — ES VARON (minimalista)
 
 Mini app tipo “cuento” para anunciar que tu bebé es varón.
+Estilo: minimalista + tonos cremitas naturales.
+
 Incluye:
-- Varias pantallas (avanzar / retroceder)
-- Dibujos (SVG) incluidos
+- 4 pantallas (sin capítulo 4 anterior)
+- Ilustraciones SVG incluidas (final con osito)
 - Animaciones suaves
-- Confeti en el final
-- Botón compartir (Web Share API / copia link)
-- Personalización del mensaje final (se guarda en el navegador)
+- Confeti final en tonos neutros
+- Botón compartir
 
 ## Cómo usar
 Abrí `index.html` en el navegador.
-
-## GitHub Pages
-1. Subí estos archivos a un repo (o a una carpeta) y habilitá GitHub Pages.
-2. Entrá a la URL publicada.
-3. En el botón ⚙️ podés personalizar el final.
 
 ## Atajos
 - ← / → para avanzar/retroceder
