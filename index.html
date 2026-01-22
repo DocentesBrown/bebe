@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StoryBook — ES VARON</title>
+  <title>StoryBook</title>
   <meta name="description" content="Una mini app StoryBook para anunciar que el bebé es varón." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,49 +61,6 @@
   </main>
 
   <canvas id="confetti" aria-hidden="true"></canvas>
-
-  <dialog class="modal" id="settingsModal">
-    <form method="dialog" class="modal-inner">
-      <div class="modal-head">
-        <h3>Personalizar</h3>
-        <button class="icon-btn" value="cancel" aria-label="Cerrar">
-          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <label class="field">
-          <span>Título final</span>
-          <input id="finalTitle" placeholder="¡Es varón! 💙" />
-        </label>
-
-        <label class="field">
-          <span>Subtítulo final</span>
-          <input id="finalSubtitle" placeholder="Gracias por acompañarnos en esta aventura" />
-        </label>
-
-        <label class="field">
-          <span>Fecha (opcional)</span>
-          <input id="finalDate" placeholder="Enero 2026" />
-        </label>
-
-        <p class="small">
-          Todo se guarda en este dispositivo (localStorage). No se sube nada a internet.
-        </p>
-      </div>
-
-      <div class="modal-actions">
-        <button class="btn secondary" value="cancel">Cancelar</button>
-        <button class="btn primary" id="saveSettings" value="default">Guardar</button>
-      </div>
-    </form>
-  </dialog>
-
-  <button class="fab" id="settingsBtn" aria-label="Personalizar">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm9 4a7.6 7.6 0 00-.12-1.3l2-1.56-2-3.46-2.45 1a8.3 8.3 0 00-2.25-1.3l-.37-2.6H9.19l-.37 2.6a8.3 8.3 0 00-2.25 1.3l-2.45-1-2 3.46 2 1.56A7.6 7.6 0 003 12c0 .44.04.87.12 1.3l-2 1.56 2 3.46 2.45-1a8.3 8.3 0 002.25 1.3l.37 2.6h5.62l.37-2.6a8.3 8.3 0 002.25-1.3l2.45 1 2-3.46-2-1.56c.08-.43.12-.86.12-1.3z" fill="currentColor"/>
-    </svg>
-  </button>
 
   <script src="./app.js"></script>
 </body>
