@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StoryBook — ¡Es varón!</title>
+  <meta name="description" content="Una mini app StoryBook para anunciar que el bebé es varón." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb1"></span>
+    <span class="orb orb2"></span>
+    <span class="orb orb3"></span>
+  </div>
+
+  <main class="app" id="app" aria-live="polite">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="title">StoryBook</span>
+      </div>
+      <div class="actions">
+        <button class="icon-btn" id="soundBtn" aria-label="Sonido">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"></path>
+            <path d="M15.5 8.5a4 4 0 010 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path>
+            <path d="M18 6a7 7 0 010 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" id="shareBtn" aria-label="Compartir">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M18 8a3 3 0 10-2.83-4H15a3 3 0 00.17 1L8.7 9.1a3 3 0 00-1.7-.6 3 3 0 100 6c.62 0 1.2-.2 1.7-.55l6.5 4.02A3 3 0 1016 18a2.98 2.98 0 00.17 1L9.66 15A3.03 3.03 0 0010 13.5a3.03 3.03 0 00-.34-1.4l6.52-4.04A3 3 0 0018 8z" fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="stage">
+      <div class="card" id="card">
+        <!-- Screens injected by JS -->
+      </div>
+
+      <div class="nav">
+        <button class="btn secondary" id="backBtn" type="button">Atrás</button>
+
+        <div class="progress" aria-label="Progreso">
+          <div class="dots" id="dots"></div>
+        </div>
+
+        <button class="btn primary" id="nextBtn" type="button">Siguiente</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="hint">Tip: usá ← → o barra espaciadora ✨</span>
+    </footer>
+  </main>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <dialog class="modal" id="settingsModal">
+    <form method="dialog" class="modal-inner">
+      <div class="modal-head">
+        <h3>Personalizar</h3>
+        <button class="icon-btn" value="cancel" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <label class="field">
+          <span>Título final</span>
+          <input id="finalTitle" placeholder="¡Es varón! 💙" />
+        </label>
+
+        <label class="field">
+          <span>Subtítulo final</span>
+          <input id="finalSubtitle" placeholder="Gracias por acompañarnos en esta aventura" />
+        </label>
+
+        <label class="field">
+          <span>Fecha (opcional)</span>
+          <input id="finalDate" placeholder="Enero 2026" />
+        </label>
+
+        <p class="small">
+          Todo se guarda en este dispositivo (localStorage). No se sube nada a internet.
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn secondary" value="cancel">Cancelar</button>
+        <button class="btn primary" id="saveSettings" value="default">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <button class="fab" id="settingsBtn" aria-label="Personalizar">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M12 8a4 4 0 100 8 4 4 0 000-8zm9 4a7.6 7.6 0 00-.12-1.3l2-1.56-2-3.46-2.45 1a8.3 8.3 0 00-2.25-1.3l-.37-2.6H9.19l-.37 2.6a8.3 8.3 0 00-2.25 1.3l-2.45-1-2 3.46 2 1.56A7.6 7.6 0 003 12c0 .44.04.87.12 1.3l-2 1.56 2 3.46 2.45-1a8.3 8.3 0 002.25 1.3l.37 2.6h5.62l.37-2.6a8.3 8.3 0 002.25-1.3l2.45 1 2-3.46-2-1.56c.08-.43.12-.86.12-1.3z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <script src="./app.js"></script>
+</body>
+</html>
